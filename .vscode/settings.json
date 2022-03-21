@@ -1,0 +1,4 @@
+{
+    "fortran.fortls.disabled": true,
+    "fortran.linter.includePaths": ["/usr/include/**", "${workspaceFolder}/include/**"]
+}
