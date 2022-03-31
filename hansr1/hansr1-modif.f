@@ -1,6 +1,6 @@
-!      hansr1 - programa para localizar pontos fixos do modelo da hanseniase
-! 	faz uma variacao nos valores de beta para outros parametros constantes
-     
+!     hansr1 - programa para localizar pontos fixos do modelo da hanseniase
+! 	   faz uma variacao nos valores de beta para outros parametros constantes
+
       program main
       external fct,outp
       dimension y(5),y0(5),yi(5)

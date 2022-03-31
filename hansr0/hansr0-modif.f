@@ -2,7 +2,7 @@ c  para compilar os arquivos: gfortran hansr1-modif.f -o hansr1-M.exe
 
 
 c     hansr0 - programa para resolver o modelo da hanseniase sem termos de difusao
-
+      program main
       external fct,outp
       dimension y(5)
       dimension prmt(5),aux(8,5),dery(5)
@@ -70,9 +70,7 @@ c	pause
 110   write(5,300)prmt(1),(y(i),i=1,5)
 
       stop
-      end
-
-
+      end program main
       subroutine fct(x,y,dery)
       real x,dery(5),y(5)
       	real mu,gama,betaP,betaM,rho,sigma,omegaP,omegaM,deltaP,deltaM
@@ -95,7 +93,7 @@ c	x = 0.
        
 700   format(1x,3(i4,1x),4(e13.6))
       return
-      end
+      end subroutine fct
 
       subroutine outp(x,ihlf)
 c      subroutine outp(x,y,dery,ihlf,ndim,prmt)
@@ -105,7 +103,7 @@ c      real y(256,128),dery(256,128),prmt(5)
   400 format(1x,'erro na solucao em t =',e15.8)
       write(*,*)'sai do outp'
   500 return
-      end
+      end subroutine outp
 
 
       subroutine rkgs(prmt,yaux,deryau,ndim,ihlf,fct,outp,aux)
@@ -235,8 +233,6 @@ c   39 call outp(x,yaux,deryau,ihlf,ndim,prmt)
 c      write(*,*)'voltei do terc. outp'
    40 return
       end
-      irec=ihlf
-      if(iend)32,32,39
    32 ihlf=ihlf-1
       istep=istep/2
       h=h+h
@@ -257,4 +253,4 @@ c      write(*,*)'voltei do terc. outp'
    39 call outp(x,ihlf)
 c   39 call outp(x,yaux,deryau,ihlf,ndim,prmt)
 c      write(*,*)'voltei do terc. outp'
-   40
+      end subroutine rkgs
