@@ -1,9 +1,0 @@
-900 .01 10 1 1e-8
-0.0143 0.75 0.05 0.9 0.25 0.1 0.833 0.8333 
-0 4000 1
-0.9 0.0 0.1 0.0 0.0
-comVacina.dat
-
-#tf,xint,rh,tprin,prec
-#mu, gama, rho, sigma, omegaP, omegaM, deltaP, deltaM
-#condicoes iniciais: y(1),y(2),y(3),y(4),y(5) = S, L, M, P, R
